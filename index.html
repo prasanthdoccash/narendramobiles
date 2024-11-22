@@ -14,51 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <script>
-        // Function to generate a random unique ID
-        function generateUniqueId() {
-            return 'xxxx-xxxx-4xxx-yxxx-xxxx-xxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
-
-        // Function to track unique visits
-        function trackUniqueVisit() {
-            let uniqueId = localStorage.getItem('uniqueVisitId');
-
-            // If the unique ID doesn't exist, generate one and store it
-            if (!uniqueId) {
-                uniqueId = generateUniqueId(); // Create a unique ID
-                localStorage.setItem('uniqueVisitId', uniqueId); // Store the unique ID
-                incrementUniqueVisitCount(); // Increment the unique visit count
-            }
-            
-            // Display the total unique visit count (to be fetched from server or local count)
-            displayVisitCount();
-        }
-
-        // Function to increment the unique visit count
-        function incrementUniqueVisitCount() {
-            // Get the current unique visit count from localStorage or set to 0
-            let visitCount = localStorage.getItem('uniqueVisitCount');
-            if (!visitCount) {
-                visitCount = 0;
-            }
-
-            visitCount = parseInt(visitCount) + 1; // Increment visit count
-            localStorage.setItem('uniqueVisitCount', visitCount); // Save updated count
-        }
-
-        // Function to display visit count
-        function displayVisitCount() {
-            let visitCount = localStorage.getItem('uniqueVisitCount') || 0;
-            document.getElementById('visit-count').innerText = `Page Visits : ${visitCount}`;
-        }
-
-        // Call trackUniqueVisit when the page loads
-        window.onload = trackUniqueVisit;
-    </script>
+    
 </head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <a href="https://api.whatsapp.com/send?phone=+919884019923&text=Hi%20How%20can%20I%20help%20you?" class="float" target="_blank">
@@ -169,7 +125,7 @@
     <!-- Footer-->
     <footer class="py-5 bg-black">
         <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Narendra Mobiles 2024</p></div><br>
-        <center><p id="visit-count">This page has been visited 0 times.</p></center>
+       
     </footer>
     
     <!-- Bootstrap core JS-->
